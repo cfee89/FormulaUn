@@ -1,16 +1,22 @@
 const axios = require('axios');
 
 
-async function getDrivers() {
-    try {
-        const response = await axios.get('https://ergast.com/api/f1/current/drivers.json');
-        const drivers = response.data.MRData.DriverTable;
-        return drivers;
-    } catch (error) {
-        console.error(error);
+class ergastApiService {
+    constructor(){
+
     }
 
-
+    async getDrivers() {
+        try {
+            const response = await axios.get('https://ergast.com/api/f1/current/drivers.json');
+            const drivers = response.data.MRData.DriverTable.Drivers.map(({driverId, url, ...keepAttrs}) => keepAttrs)
+            return drivers;
+        } catch (error) {
+            console.error(error);
+        }
+    }
 }
 
-module.exports = getDrivers;
+
+
+module.exports = new ergastApiService();
