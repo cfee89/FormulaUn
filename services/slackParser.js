@@ -10,7 +10,7 @@ class SlackParser {
     parseSlackCommand(slackRequest) {
         console.log('hit slack parser');
 
-        const { body } = {slackRequest};
+        const { body } = slackRequest;
         console.log(body);
       
         
