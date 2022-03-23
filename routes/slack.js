@@ -4,8 +4,8 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
-  let driverResult = await ergastApiService.getDrivers();
-  res.send(driverResult);
+//  let driverResult = await ergastApiService.getDrivers();
+console.log(req);
 });
 
 module.exports = router;
