@@ -11,10 +11,10 @@ class SlackParser {
         console.log('hit slack parser');
 
         const { body } = {slackRequest};
-        let commandData = {};
-        // commandData.channel = slackRequest.body.channel_id;
-        commandData.command = slackRequest.body.text;
-        if(commandData.command == 'drivers')
+        console.log(body);
+      
+        
+        if(slackRequest.body.text == 'drivers')
         {
             return this.getAllDrivers();
         }
