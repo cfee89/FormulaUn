@@ -1,7 +1,8 @@
-var ergastApiService = require('../services/ergastApiService');
+var ErgastApiService = require('../services/ergastApiService');
 
 class SlackParser {
     constructor(){
+        this.ergastApi = new ErgastApiService();
         // this.commands = { 'drivers': getAllDrivers };
 
     }
@@ -13,17 +14,18 @@ class SlackParser {
         let commandData = {};
         // commandData.channel = slackRequest.body.channel_id;
         commandData.command = slackRequest.body.text;
-        if(commandData.command == 'driver')
+        if(commandData.command == 'drivers')
         {
-            this.getAllDrivers();
+            return this.getAllDrivers();
         }
     }
 
     getAllDrivers() {
-        drivers = ergastApiService.getDrivers();
+        const drivers = this.ergastApi.getDrivers();
         console.log(drivers);
+        return drivers;
     }
 
 }
 
-module.exports = new SlackParser();
+module.exports = SlackParser;

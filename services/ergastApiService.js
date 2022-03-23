@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 
-class ergastApiService {
+class ErgastApiService {
     constructor(){
 
     }
@@ -19,4 +19,4 @@ class ergastApiService {
 
 
 
-module.exports = new ergastApiService();
+module.exports = ErgastApiService;
