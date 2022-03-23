@@ -13,7 +13,7 @@ class SlackParser {
         let commandData = {};
         // commandData.channel = slackRequest.body.channel_id;
         commandData.command = slackRequest.body.text;
-        if(text === 'driver')
+        if(commandData.command === 'driver')
         {
             this.getAllDrivers();
         }
