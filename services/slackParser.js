@@ -8,9 +8,10 @@ class SlackParser {
 
     parseSlackCommand(slackRequest) {
         console.log('hit slack parser');
-        
-        let { body: commandData } = {slackRequest};
-        commandData.channel = slackRequest.body.channel_id;
+
+        const { body } = {slackRequest};
+        let commandData = {};
+        // commandData.channel = slackRequest.body.channel_id;
         commandData.command = slackRequest.body.text;
         if(text === 'driver')
         {
