@@ -9,7 +9,8 @@ const slackMessageBuilder = new SlackMessageBuilder();
 router.post('/', async function(req, res, next) {
 
   result = slackParser.parseSlackCommand(req);
-  // message = slackMessageBuilder.buildDriversListMessage(result);
+   message = slackMessageBuilder.buildDriversListMessage(result);
+   console.log(message);
   res.json({ 'response_type': 'in_channel', 'text': '/fun drivers will retrieve a list of current drivers!' });
 });
 
