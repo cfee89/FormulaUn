@@ -8,7 +8,7 @@ class SlackMessageBuilder {
                 'response_type': 'in_channel',
                 "text": {
                     "type":"mrkdwn",
-                    "text": JSON.stringify(driversList)
+                    "text": JSON.stringify(driversList[0])
                 }
             }
         return message;
