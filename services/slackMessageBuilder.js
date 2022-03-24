@@ -7,7 +7,7 @@ class SlackMessageBuilder {
         let message = {
                     "text": {
                         "type":"mrkdwn",
-                        "text": JSON.stringify(driversList)
+                        "text": driversList
                     }
                 }
         return message;
