@@ -5,11 +5,12 @@ class SlackMessageBuilder {
 
     buildDriversListMessage(driversList) {
         let message = {
-                    "text": {
-                        "type":"mrkdwn",
-                        "text": JSON.stringify(driversList)
-                    }
+                'response_type': 'in_channel',
+                "text": {
+                    "type":"mrkdwn",
+                    "text": JSON.stringify(driversList)
                 }
+            }
         return message;
     }
 }

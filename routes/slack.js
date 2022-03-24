@@ -11,7 +11,7 @@ router.post('/', async function(req, res, next) {
   result = await slackParser.parseSlackCommand(req);
   message = slackMessageBuilder.buildDriversListMessage(result);
   console.log(message);
-  res.json({ 'response_type': 'in_channel', 'text': '/fun drivers will retrieve a list of current drivers!' });
+  res.json(message);
 });
 
 module.exports = router;
