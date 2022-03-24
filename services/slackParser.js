@@ -11,9 +11,7 @@ class SlackParser {
         console.log('hit slack parser');
 
         const { body } = slackRequest;
-        console.log(body);
       
-        
         if(slackRequest.body.text == 'drivers')
         {
             return this.getAllDrivers();
@@ -23,7 +21,6 @@ class SlackParser {
     async getAllDrivers() {
         console.log('Entered getAllDrivers');
         const drivers = await this.ergastApi.getDrivers();
-        console.log(drivers);
         return drivers;
     }
 

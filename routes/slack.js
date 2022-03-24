@@ -6,8 +6,8 @@ const slackParser = new SlackParser();
 /* POST slack inputs. */
 router.post('/', async function(req, res, next) {
 
-  slackParser.parseSlackCommand(req);
-  res.send();
+  result = slackParser.parseSlackCommand(req);
+  res.send(result);
 });
 
 module.exports = router;
