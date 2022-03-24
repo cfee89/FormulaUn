@@ -10,7 +10,7 @@ router.post('/', async function(req, res, next) {
 
   result = slackParser.parseSlackCommand(req);
   message = slackMessageBuilder.buildDriversListMessage(result);
-  res.json(message);
+  res.json(result);
 });
 
 module.exports = router;
