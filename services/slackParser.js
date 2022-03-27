@@ -3,7 +3,7 @@ var ErgastApiService = require('../services/ergastApiService');
 class SlackParser {
     constructor(){
         this.ergastApi = new ErgastApiService();
-        // this.commands = { 'drivers': getAllDrivers };
+        this.commands = { 'drivers': getAllDrivers };
 
     }
 
@@ -11,11 +11,8 @@ class SlackParser {
         console.log('hit slack parser');
 
         const { body } = slackRequest;
-      
-        if(slackRequest.body.text == 'drivers')
-        {
-            return this.getAllDrivers();
-        }
+        const executor = this.commands[body.text];
+        return executor(body);
     }
 
     async getAllDrivers() {
