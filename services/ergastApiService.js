@@ -16,6 +16,18 @@ class ErgastApiService {
             console.error(error);
         }
     }
+
+    async getLastRaceResults() {
+        console.log('Entered ErgastApiService::getLastRaceResults');
+        try {
+            const response = await axios.get('https://ergast.com/api/f1/current/results.json');
+            const results = response.data.MRData.RaceTableRaces.pop();
+            console.log(JSON.stringify(results));
+            return results;
+        } catch (error) {
+            console.error(error);
+        }
+    }
 }
 
 

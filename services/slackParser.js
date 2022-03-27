@@ -13,12 +13,6 @@ class SlackParser {
         return executor(body);
     }
 
-    // async getAllDrivers() {
-    //     console.log('Entered getAllDrivers');
-    //     const drivers = await this.ergastApi.getDrivers();
-    //     return drivers;
-    // }
-
 }
 
 module.exports = SlackParser;
