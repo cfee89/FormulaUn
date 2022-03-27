@@ -12,7 +12,7 @@ class SlackMessageBuilder {
             allDrivers.concat(driverString);
         });
         
-        console.log("The driver string is: " + allDrivers);
+        console.log("The driver string is: " + JSON.stringify(allDrivers));
 
         let message = { 
             "response_type": "in_channel",
