@@ -1,22 +1,15 @@
 var ErgastApiService = require('../services/ergastApiService');
 
-class CommandFactory {
-    constructor(){
-        ergastApi = new ErgastApiService();
-    }
+const  CommandFactory = () => {
+    const ergastApi = new ErgastApiService();
 
-    async getAllDrivers() {
+    async function getAllDrivers() {
         console.log('Entered getAllDrivers');
         const drivers = await ergastApi.getDrivers();
         return drivers;
     }
 
-    buildCommands() {
-        return { 'drivers': this.getAllDrivers };
-    }
-
-
-
+    return { 'drivers': getAllDrivers };
 }
 
 module.exports = CommandFactory;

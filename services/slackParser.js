@@ -2,8 +2,7 @@ var CommandFactory = require('../factories/commandFactory');
 
 class SlackParser {
     constructor(){
-        this.factory = new CommandFactory();
-        this.commands = this.factory.buildCommands();
+        this.commands = CommandFactory();
     }
 
     parseSlackCommand(slackRequest) {
