@@ -7,7 +7,7 @@ class SlackMessageBuilder {
         let allDrivers = "";
         console.log('slackMessageBuilder - ' + JSON.stringify(driversList));
         
-        driversList.forEach(()=>{
+        driversList.forEach((driver)=>{
             console.log(JSON.stringify(driver));
         });
         //    allDrivers.concat(driverString);
