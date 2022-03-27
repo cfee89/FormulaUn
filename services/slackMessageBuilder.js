@@ -33,7 +33,7 @@ class SlackMessageBuilder {
 
     buildResultsMessage(results) {
         console.log('ENTERED buildResultsMessage()');
-        let resultsString = `${emojifyPosition(results.raceName)}\nPosition   Driver   Team\n`;
+        let resultsString = `${emojifyPosition(results.raceName)}\nPos   Driver   Team\n`;
         
         results.Results.forEach((result)=>{
 
