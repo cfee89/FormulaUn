@@ -37,7 +37,9 @@ class SlackMessageBuilder {
         
         results.Results.forEach((result)=>{
 
-            let resultString = `${this.emojifyPosition(result.position)}    ${result.Driver.code}   ${result.Constructor.name} \n`
+            let resultString = `${this.emojifyPosition(result.position)}`;
+            resultString.slice(6,6) + result.Driver.code;
+            resultString.slice(15,15) + result.Constructor.name + '\n'
             console.log(resultString);
             resultsString+=resultString;
         });
