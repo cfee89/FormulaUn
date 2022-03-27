@@ -62,11 +62,11 @@ class SlackMessageBuilder {
     emojifyPosition(position)
     {
         switch(position) {
-            case 1:
+            case '1':
                 return ':first_place_medal:';
-            case 2:
+            case '2':
                 return ':second_place_medal:';
-            case 3:
+            case '3':
                 return ':third_place_medal:';
             default:
                 return position;
