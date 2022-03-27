@@ -1,9 +1,7 @@
-var ErgastApiService = require('../services/ergastApiService');
 var CommandFactory = require('../factories/commandFactory');
 
 class SlackParser {
     constructor(){
-        this.ergastApi = new ErgastApiService();
         this.factory = new CommandFactory();
         this.commands = this.factory.buildCommands();
     }
