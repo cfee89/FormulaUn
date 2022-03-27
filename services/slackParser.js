@@ -1,4 +1,5 @@
 var ErgastApiService = require('../services/ergastApiService');
+var CommandFactory = require('../factories/commandFactory');
 
 class SlackParser {
     constructor(){
