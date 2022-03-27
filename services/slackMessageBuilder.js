@@ -10,7 +10,7 @@ class SlackMessageBuilder {
         driversList.forEach((driver)=>{
             let driverString = `${driver.permanentNumber} ${driver.code} ${driver.familyName} \n`
             console.log(driverString);
-            allDrivers.concat(driverString);
+            allDrivers+=driverString;
         });
         
         console.log("The driver string is: " + JSON.stringify(allDrivers));
