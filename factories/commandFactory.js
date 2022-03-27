@@ -15,7 +15,7 @@ const  CommandFactory = () => {
     async function getLastRaceResults() {
         console.log('Entered getLastRaceResults');
         const results = await ergastApi.getLastRaceResults();
-        message = slackMessageBuilder.buildDriversListMessage(results);
+        message = slackMessageBuilder.buildResultsMessage(results);
         return message;
     }
 

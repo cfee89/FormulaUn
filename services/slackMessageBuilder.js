@@ -30,6 +30,33 @@ class SlackMessageBuilder {
         }
         return message;
     }
+
+    buildResultsMessage(results) {
+        console.log('ENTERED buildResultsMessage()');
+        let results = "Position   Driver   Team\n";
+        
+        results.forEach((result)=>{
+            let resultString = `${result.position}   ${result.code}   ${result.constructor.name} \n`
+            console.log(resultString);
+            results+=resultString;
+        });
+        
+        console.log("The results string is: " + JSON.stringify(results));
+
+        let message = { 
+            "response_type": "in_channel",
+            "blocks": [
+                {
+                    "type": "section",
+                    "text": {
+                        "type":"mrkdwn",
+                        "text": results
+                    }
+                }
+            ]
+        }
+        return message;
+    }
 }
 
 module.exports = SlackMessageBuilder;
