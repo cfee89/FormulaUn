@@ -79,7 +79,9 @@ class SlackMessageBuilder {
             case '8':
                 return '  8  ';
             case '9':
-                return '  9  ';             
+                return '  9  ';    
+            case '10':
+                return '10 ';         
             default:
                 return position;
         }
