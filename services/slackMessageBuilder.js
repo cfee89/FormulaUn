@@ -5,7 +5,7 @@ class SlackMessageBuilder {
 
     buildDriversListMessage(driversList) {
         let allDrivers = '';
-        for(driver in driversList) {
+        for(let driver in driversList) {
             let driverString = `${driver.permanentNumber} ${driver.code} ${driver.familyName} \n`;
             allDrivers.append(driverString);
         }
