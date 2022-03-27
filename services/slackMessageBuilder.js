@@ -37,11 +37,9 @@ class SlackMessageBuilder {
         
         results.Results.forEach((result)=>{
 
-            let resultString = `${this.emojifyPosition(result.position)}`;
-            let stringWithDriver = resultString.slice(6,6) + result.Driver.code;
-            let finalResult = stringWithDriver.slice(15,15) + result.Constructor.name + '\n'
-            console.log(finalResult);
-            resultsString+=finalResult;
+            let resultString = `${this.emojifyPosition(result.position)}    ${result.Driver.code}   ${result.Constructor.name} \n`
+            console.log(resultString);
+            resultsString+=resultString;
         });
         
         console.log("The results string is: " + JSON.stringify(resultsString));
@@ -70,6 +68,18 @@ class SlackMessageBuilder {
                 return ':second_place_medal:';
             case '3':
                 return ':third_place_medal:';
+            case '4':
+                return '4 ';
+            case '5':
+                return '5 ';
+            case '6':
+                return '6 ';
+            case '7':
+                return '7 ';
+            case '8':
+                return '8 ';
+            case '9':
+                return '9 ';             
             default:
                 return position;
         }
