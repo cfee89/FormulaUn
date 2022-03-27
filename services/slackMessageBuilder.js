@@ -21,7 +21,7 @@ class SlackMessageBuilder {
                 }
             ]
         }
-        jsonMessage = JSON.stringify(message);
+        let jsonMessage = JSON.stringify(message);
         console.log('Drivers message is: ' + jsonMessage);
         return jsonMessage;
     }
