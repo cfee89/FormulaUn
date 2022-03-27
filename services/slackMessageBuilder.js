@@ -35,7 +35,7 @@ class SlackMessageBuilder {
         console.log('ENTERED buildResultsMessage()');
         let resultsString = "Position   Driver   Team\n";
         
-        results.forEach((result)=>{
+        results.Results.forEach((result)=>{
             let resultString = `${result.position}   ${result.code}   ${result.constructor.name} \n`
             console.log(resultString);
             resultsString+=resultString;
