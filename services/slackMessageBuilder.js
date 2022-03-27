@@ -33,15 +33,15 @@ class SlackMessageBuilder {
 
     buildResultsMessage(results) {
         console.log('ENTERED buildResultsMessage()');
-        let results = "Position   Driver   Team\n";
+        let resultsString = "Position   Driver   Team\n";
         
         results.forEach((result)=>{
             let resultString = `${result.position}   ${result.code}   ${result.constructor.name} \n`
             console.log(resultString);
-            results+=resultString;
+            resultsString+=resultString;
         });
         
-        console.log("The results string is: " + JSON.stringify(results));
+        console.log("The results string is: " + JSON.stringify(resultsString));
 
         let message = { 
             "response_type": "in_channel",
@@ -50,7 +50,7 @@ class SlackMessageBuilder {
                     "type": "section",
                     "text": {
                         "type":"mrkdwn",
-                        "text": results
+                        "text": resultsString
                     }
                 }
             ]
