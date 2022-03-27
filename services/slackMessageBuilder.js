@@ -13,9 +13,11 @@ class SlackMessageBuilder {
         let message = { 
             'response_type': 'in_channel',
             'blocks': [
-                "text": {
-                    "type":"mrkdwn",
-                    "text": allDrivers
+                {
+                    "text": {
+                        "type":"mrkdwn",
+                        "text": allDrivers
+                    }
                 }
             ]
         }
