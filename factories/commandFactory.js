@@ -12,7 +12,7 @@ class CommandFactory {
     }
 
     buildCommands() {
-        return { 'drivers': getAllDrivers };
+        return { 'drivers': this.getAllDrivers };
     }
 
 

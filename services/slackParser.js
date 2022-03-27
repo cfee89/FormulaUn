@@ -5,7 +5,7 @@ class SlackParser {
     constructor(){
         this.ergastApi = new ErgastApiService();
         this.factory = new CommandFactory();
-        this.commands = factory.buildCommands();
+        this.commands = this.factory.buildCommands();
     }
 
     parseSlackCommand(slackRequest) {
