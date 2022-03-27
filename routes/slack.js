@@ -10,7 +10,7 @@ router.post('/', async function(req, res, next) {
 
   result = await slackParser.parseSlackCommand(req);
   message = slackMessageBuilder.buildDriversListMessage(result);
-  console.log(message);
+  console.log('Final message is: ' + JSON.stringify(message));
   res.json(message);
 });
 
