@@ -21,6 +21,7 @@ class SlackParser {
     async getAllDrivers() {
         console.log('Entered getAllDrivers');
         const drivers = await this.ergastApi.getDrivers();
+        console.log('Driverslist is: ' + drivers);
         return drivers;
     }
 
