@@ -33,9 +33,10 @@ class SlackMessageBuilder {
 
     buildResultsMessage(results) {
         console.log('ENTERED buildResultsMessage()');
-        let resultsString = `${results.raceName}\nPosition   Driver   Team\n`;
+        let resultsString = `${emojifyPosition(results.raceName)}\nPosition   Driver   Team\n`;
         
         results.Results.forEach((result)=>{
+
             let resultString = `${result.position}   ${result.Driver.code}   ${result.Constructor.name} \n`
             console.log(resultString);
             resultsString+=resultString;
@@ -56,6 +57,20 @@ class SlackMessageBuilder {
             ]
         }
         return message;
+    }
+
+    emojifyPosition(position)
+    {
+        switch(position) {
+            case 1:
+                return ':first_place_medal:';
+            case 2:
+                return ':second_place_medal:';
+            case 3:
+                return ':third_place_medal:';
+            default:
+                return position;
+        }
     }
 }
 
