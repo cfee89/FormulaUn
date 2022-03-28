@@ -70,7 +70,7 @@ class SlackMessageBuilder {
             case '10':
                 return '10'.padEnd(12," ") + result.Driver.code.padEnd(11," ") + result.Constructor.name + '\n';
             default:
-                return '  ' + result.position.padEnd(13," ") + result.Driver.code.padEnd(11," ") + result.Constructor.name + '\n';
+                return '  ' + result.position.padEnd(11," ") + result.Driver.code.padEnd(11," ") + result.Constructor.name + '\n';
         }
     }
 }
