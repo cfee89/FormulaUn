@@ -38,7 +38,7 @@ class SlackMessageBuilder {
         
         results.Results.forEach((result)=>{
 
-            let resultString = renderRow(result)
+            let resultString = this.renderRow(result)
             console.log(finalString);
             resultsString+=finalString;
         });
