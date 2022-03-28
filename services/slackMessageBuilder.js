@@ -33,7 +33,7 @@ class SlackMessageBuilder {
 
     buildResultsMessage(results) {
         console.log('ENTERED buildResultsMessage()');
-        let headers = 'Pos'.padEnd(13," ") + 'Driver'.padEnd(15," ") + 'Team\n';
+        let headers = 'Pos'.padEnd(13," ") + 'Driver'.padEnd(13," ") + 'Team\n';
         let resultsString = `*${results.raceName}*\n` + headers;
         
         results.Results.forEach((result)=>{
