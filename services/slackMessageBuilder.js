@@ -37,10 +37,8 @@ class SlackMessageBuilder {
         let resultsString = `*${results.raceName}*\n` + headers;
         
         results.Results.forEach((result)=>{
-
             let resultString = this.renderRow(result)
-            console.log(finalString);
-            resultsString+=finalString;
+            resultsString+=resultString;
         });
         
         console.log("The results string is: " + JSON.stringify(resultsString));
