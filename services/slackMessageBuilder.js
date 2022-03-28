@@ -38,8 +38,7 @@ class SlackMessageBuilder {
         
         results.Results.forEach((result)=>{
 
-            let resultString = `${this.emojifyPosition(result.position)}    ${result.Driver.code}`;
-            let finalString = resultString.padEnd(35, ' ') + result.Constructor.name + '\n';
+            let resultString = renderRow(result)
             console.log(finalString);
             resultsString+=finalString;
         });
@@ -61,19 +60,19 @@ class SlackMessageBuilder {
         return message;
     }
 
-    emojifyPosition(position)
+    renderRow(result)
     {
-        switch(position) {
+        switch(result.position) {
             case '1':
-                return ':first_place_medal:'.padEnd(28," ");
+                return ':first_place_medal:'.padEnd(28," ") + result.Driver.code.padEnd(20," ") + result.Constructor.name + '\n';
             case '2':
-                return ':second_place_medal:'.padEnd(29," ");
+                return ':second_place_medal:'.padEnd(29," ") + result.Driver.code.padEnd(20," ") + result.Constructor.name + '\n';
             case '3':
-                return ':third_place_medal:'.padEnd(28," ");
+                return ':third_place_medal:'.padEnd(28," ") + result.Driver.code.padEnd(20," ") + result.Constructor.name + '\n';
             case '10':
-                return ':third_place_medal:'.padEnd(27," ");
+                return ':third_place_medal:'.padEnd(27," ") + result.Driver.code.padEnd(20," ") + result.Constructor.name + '\n';
             default:
-                return position.padEnd(13," ");
+                return result.position.padEnd(13," ") + result.Driver.code.padEnd(20," ") + result.Constructor.name + '\n';
         }
     }
 }
