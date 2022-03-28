@@ -33,13 +33,13 @@ class SlackMessageBuilder {
 
     buildResultsMessage(results) {
         console.log('ENTERED buildResultsMessage()');
-        let headers = 'Pos'.padEnd(20," ") + 'Driver'.padEnd(25," ") + 'Team\n';
+        let headers = 'Pos'.padEnd(15," ") + 'Driver'.padEnd(20," ") + 'Team\n';
         let resultsString = `*${results.raceName}*\n` + headers;
         
         results.Results.forEach((result)=>{
 
             let resultString = `${this.emojifyPosition(result.position)}    ${result.Driver.code}`;
-            let finalString = resultString.padEnd(25, ' ') + result.Constructor.name + '\n';
+            let finalString = resultString.padEnd(20, ' ') + result.Constructor.name + '\n';
             console.log(finalString);
             resultsString+=finalString;
         });
@@ -65,11 +65,11 @@ class SlackMessageBuilder {
     {
         switch(position) {
             case '1':
-                return ':first_place_medal:'.padEnd(36," ");
+                return ':first_place_medal:'.padEnd(35," ");
             case '2':
                 return ':second_place_medal:'.padEnd(36," ");;
             case '3':
-                return ':third_place_medal:'.padEnd(36," ");;
+                return ':third_place_medal:'.padEnd(35," ");;
             default:
                 return position.padEnd(20," ");
         }
