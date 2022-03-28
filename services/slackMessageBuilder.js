@@ -42,7 +42,7 @@ class SlackMessageBuilder {
         });
         
         console.log("The results string is: " + JSON.stringify(resultsString));
-        finalString = '```'+resultsString+'```';
+        let finalString = '```'+resultsString+'```';
         let message = { 
             "response_type": "in_channel",
             "blocks": [
@@ -50,7 +50,7 @@ class SlackMessageBuilder {
                     "type": "section",
                     "text": {
                         "type":"mrkdwn",
-                        "text": resultsString
+                        "text": finalString
                     }
                 }
             ]
