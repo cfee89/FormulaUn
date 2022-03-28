@@ -33,7 +33,8 @@ class SlackMessageBuilder {
 
     buildResultsMessage(results) {
         console.log('ENTERED buildResultsMessage()');
-        let resultsString = `*${results.raceName}*\nPos   Driver   Team\n`;
+        let headers = 'Pos'.padEnd(20," ") + 'Driver'.padEnd(25," ") + 'Team\n';
+        let resultsString = `*${results.raceName}*\n` + headers;
         
         results.Results.forEach((result)=>{
 
@@ -64,27 +65,13 @@ class SlackMessageBuilder {
     {
         switch(position) {
             case '1':
-                return ':first_place_medal:';
+                return ':first_place_medal:'.padEnd(20," ");
             case '2':
-                return ':second_place_medal:';
+                return ':second_place_medal:'.padEnd(20," ");;
             case '3':
-                return ':third_place_medal:';
-            case '4':
-                return '  4  ';
-            case '5':
-                return '  5  ';
-            case '6':
-                return '  6  ';
-            case '7':
-                return '  7  ';
-            case '8':
-                return '  8  ';
-            case '9':
-                return '  9  ';    
-            case '10':
-                return '10 ';         
+                return ':third_place_medal:'.padEnd(20," ");;
             default:
-                return position;
+                return position.padEnd(20," ");
         }
     }
 }
