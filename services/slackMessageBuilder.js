@@ -62,13 +62,13 @@ class SlackMessageBuilder {
     {
         switch(result.position) {
             case '1':
-                return ':first_place_medal:'.padEnd(28," ") + result.Driver.code.padEnd(20," ") + result.Constructor.name + '\n';
+                return ':first_place_medal:'.padEnd(28," ") + result.Driver.code.padEnd(11," ") + result.Constructor.name + '\n';
             case '2':
-                return ':second_place_medal:'.padEnd(29," ") + result.Driver.code.padEnd(20," ") + result.Constructor.name + '\n';
+                return ':second_place_medal:'.padEnd(29," ") + result.Driver.code.padEnd(11," ") + result.Constructor.name + '\n';
             case '3':
-                return ':third_place_medal:'.padEnd(28," ") + result.Driver.code.padEnd(20," ") + result.Constructor.name + '\n';
+                return ':third_place_medal:'.padEnd(28," ") + result.Driver.code.padEnd(11," ") + result.Constructor.name + '\n';
             case '10':
-                return '10'.padEnd(12," ") + result.Driver.code.padEnd(20," ") + result.Constructor.name + '\n';
+                return '10'.padEnd(12," ") + result.Driver.code.padEnd(11," ") + result.Constructor.name + '\n';
             default:
                 return result.position.padEnd(13," ") + result.Driver.code.padEnd(11," ") + result.Constructor.name + '\n';
         }
