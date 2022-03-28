@@ -39,7 +39,7 @@ class SlackMessageBuilder {
         results.Results.forEach((result)=>{
 
             let resultString = `${this.emojifyPosition(result.position)}    ${result.Driver.code}`;
-            let finalString = resultString.padEnd(20, ' ') + result.Constructor.name + '\n';
+            let finalString = resultString.padEnd(35, ' ') + result.Constructor.name + '\n';
             console.log(finalString);
             resultsString+=finalString;
         });
@@ -70,10 +70,8 @@ class SlackMessageBuilder {
                 return ':second_place_medal:'.padEnd(26," ");
             case '3':
                 return ':third_place_medal:'.padEnd(25," ");
-            case '10':
-                return '10'.padEnd(19," ");
             default:
-                return position.padEnd(20," ");
+                return position.padEnd(15," ");
         }
     }
 }
