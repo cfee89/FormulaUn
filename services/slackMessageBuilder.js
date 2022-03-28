@@ -65,11 +65,13 @@ class SlackMessageBuilder {
     {
         switch(position) {
             case '1':
-                return ':first_place_medal:'.padEnd(35," ");
+                return ':first_place_medal:'.padEnd(25," ");
             case '2':
-                return ':second_place_medal:'.padEnd(36," ");;
+                return ':second_place_medal:'.padEnd(26," ");
             case '3':
-                return ':third_place_medal:'.padEnd(35," ");;
+                return ':third_place_medal:'.padEnd(25," ");
+            case '10':
+                return '10'.padEnd(19," ");
             default:
                 return position.padEnd(20," ");
         }
